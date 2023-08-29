@@ -1,0 +1,685 @@
+JAVA SCRIPT - VARIÁVEIS
+-----------------------
+- Variáveis:
+    - var: não é mais utilizada
+
+    - let: variáveis que podem ter o valor reatribuído
+
+    - const: variáveis contantes
+
+    - Tipos:
+        - string: texto
+        - number: número (int, float, double)
+        - boolean: true e false (verdadeiro ou falso)
+        - null: representa a ausência intencional de um valor
+        - undefined: apesar de declarada ela ainda não foi definida
+
+    - Utilizar typeof auxilia na visualização do tipo de variável
+
+    - Os nomes das variáveis não podem conter acentos, espaços e nem começarem com um número:
+        - Incorreto: let 1numero, let numero decimal, let número
+        - Correto: let numero1, let numeroDecimal (camelCase), let numero
+
+
+
+JAVA SCRIPT - CONDICIONAIS
+--------------------------
+- Condicionais:
+    - if: traduzindo o resultado é "se"
+
+    - else: traduzindo o resultado é "senão"
+
+    - A estrutura é representada da seguinte forma:
+        - if (condição) {   --> Se a condição for verdadeira, executará somente o primeiro bloco de código
+            bloco de código
+          }
+          else {            --> Se a condição for falsa, executará somente o segundo bloco de código
+            bloco de código
+          }
+
+    - switch: funciona como if, porém é mais intuitivo
+        - switch (condicao) {
+            case 1:
+            bloco de código
+            break           --> Precisa ser utilizado para identificar a parada se a condição for atendida
+
+            case 2:
+            bloco de código
+            break
+
+            defaulf:        --> Valor padrão e opcional
+            bloco de código
+            break
+          }
+
+
+
+JAVA SCRIPT - ESTRUTURA DE REPETIÇÃO
+------------------------------------
+- Estrutura de repetição, laços ou loops, permitem a repetição de comandos ou códigos até atenderem uma determinada condição:
+    - Utilizadas para percorrerem arrays ou objetos
+
+    - while significa enquanto, ou seja, essa função precisa de uma condição para funcionar:
+        - Ela compara valores true ou false
+        - Pode-se utilizar junto ao "break" e "continue" para interferir no laço de repetição
+        - Se apresenta de algumas formas:
+            - let contador = 0
+            while(contador < 9) {         --> Esse looping acontecerá até condição ser falsa, ou seja, quando o contador for igual a 9
+                "algum código"
+                contador = contador + 1   --> Geralmente usa-se =+, ++, =-, -- (contador ++)
+            }
+
+    - for também é estrutura de looping condicional:
+        - Compara valores "true" ou "false"
+        - Configura-se da seguinte forma:
+            - for(variavel; condição; controle) {}
+        - Se apresenta da seguinte forma:
+            - for(let contador = 0; contador < variavel.length; contador++ ) {   --> Nesse caso, o contador pode ser instanciado na própria condição
+                "algum código"                                                       e quando se tratar de listas, podemos associa-lo ao seu tamanho, por isso o uso de length
+            }
+        - É possível trabalhar com laços encadeados, mas é preciso tomar cuidado com a lógica utilizada:
+            - for(let x = 1; x <= 10; x++) {
+                for(let y = 1; y <= 10; y++) {
+                    document.write(`${x} x ${y} = ${x * y} <br>`)
+                }
+                document.write("<hr/>")
+              }
+
+    - for in assemelha-se ao for, porém, com algumas diferenças:
+        - let algumArray = ["Hellen", "Diego", "Matheus"]
+          for(let x in algumArray) {
+            console.log(x)   -->   x = (0, 1 ou 2)
+          }
+        - O seu retorno é o valor do índice e não o conteúdo que o ocupa, ou seja, se x corresponde ao índice
+        é possível recuperar o conteúdo utilizando algumArray[x]
+
+    - for of assemelha-se ao for in, porém, com algumas diferenças:
+        - let algumArray = ["Hellen", "Diego", "Matheus"]
+          for(let x of algumArray) {
+            console.log(x)   -->   x = (Hellen, Diego ou Matheus)
+          }
+        - O seu retorno é o valor do conteúdo referente a posição que ele ocupa
+
+    - forEach() também é uma estrutura de repetição, porém, tem como característica ser uma função EXCLUSIVA para arrays:
+        - Ela tem como propósito percorrer cada item de um array e exeutar algum comando, além disso, leva como parâmetros o valor, índice e array:
+            - let funcionarios = ["João", "Bruno", "Gabriel", "Vinicius", "Felipe"]
+              funcionarios.forEach((valor, indice, array) => {   -->   Os parâmetros representam esse conteúdo, mas podem obter outras nomenclaturas (a, b, c)
+                "algum código"
+              })
+        - Essa função atua em listas com índices iguais ou maiores que 0, em casos que eles se encontram como strings ou números negativos o forEach os desconsidera
+
+
+
+JAVA SCRIPT - OPERADORES
+------------------------
+- Operadores de comparação:
+    - Igual: == (comparar o valor)
+
+    - Idêntico: === (comparar tipo e valor)
+
+    - Difernete: !=
+
+    - Não idêntico: !==
+
+    - Menor: <
+
+    - Maior: >
+
+    - Menor igual: <=
+
+    - Maior igual: >=
+
+
+- Operadores lógicos:
+    - &&: E (verdadeiro se TODAS as expressões forem verdadeiras)
+
+    - ||: OU (verdadeiro se pelo menos UMA expressão for verdadeira)
+
+    - !: negação (inverte o resultado da expressão de comparação)
+
+
+- Operadores aritméticos:
+    - Adição: +
+
+    - Subtração: -
+
+    - Multiplicação: *
+
+    - Divisão: /
+
+    - Módulo: % (é o resto existente em uma operação de divisão)
+
+    - Incremento: ++
+
+    - Decremento: --
+
+    - Ao realizar essas operações, podemos diminuir as linhas de código conforme abaixo:
+        - let teste = 10   -->   teste = teste + 5 (será igual 15)
+        - let teste = 10   -->   teste += 5 (também será igual 15)
+        - A regra indica primeiro a operação que será realiza (+, -, * ou /) e depois a atribuição (=)
+
+
+- Operador ternário:
+    - É um método condicional resumido
+
+    - Sintaxe: <condição> ? <verdadeiro> : <falso>
+        - let resultado = (nota >= media && faltas <= maxFaltas) ? "Aprovado" : "Reprovado"
+        - Esse método pode ser um pouco limitado porque ele não permite criar bloco de código como no if/else
+        - Geralmente o que está depois do "?" é o valor armazenado na variável
+
+
+
+JAVA SCRIPT - CASTING
+---------------------
+- Casting:
+    - É o tratamento de conversão de tipos 
+
+    - parseInt(): transformar tipos de string em number (não preserva fração)
+
+    - parseFloat(): transformar tipos de string em number (ponto flutuante preserva a fração)
+
+    - toString(): transformar tipos number em string
+
+
+
+JAVA SCRIPT - MÉTODOS DE ARRAY
+------------------------------
+- Arrays são listas ordenadas com variáveis que são relacionadas a índices (chaves):
+    - Uma variável pode armazenar um array
+
+    - Cada posição do array pode ser representada pelo seu índice
+
+    - Sua ordenação inicia a partir do 0:
+        - let lista = ["amarelo", "azul", "branco"]
+          let lista = [0, 1, 2]
+
+    - Utilização do atributo length:
+        - Length significa tamanho
+        - Pode ser utilizado para strings e arrays:
+            - Usando em strings é possível identificar a quantidade de caracteres
+            - Usando em arrays é possível identificar a quantidade de elementos que compõem a lista
+            - let palavra = "Palavra"                     -->   console.log(palavra.length) = 7  
+              let lista = ["amarelo", "azul", "branco"]   -->   console.log(lista.length) = 3
+
+
+- Array multidimensional é composto por outros arrays, ou seja, um array com outros arrays
+    - let lista = []
+      lista["Nomes"] = ["Amanda", "Bruna", "Caio"]
+      lista["Frutas"] = ["Abacaxi", "Banana", "Carambola"]
+
+
+- Métodos de inclusão e exclusão para arrays:
+    - .push(): inclui um elemento no final do array
+
+    - .unshift(): inclui um elemento no início do array
+
+    - .pop(): exclui um elemento do final do array
+
+    - .shift(): exclui um elemento do início do array
+
+
+- Métodos de pesquisa para arrays:
+    - .indexOf(): é um método usado em arrays que retorna o índice de um elemento procurado
+        - let lista = ["Gabriel", "Geovana", "Gessyca", "Gabrieli"]
+          lista.indexOf("Geovana")   -->   Corresponde ao índice 1
+
+    - .lastIndexOf(): é um método usado em arrays que retorna último índice de um elemento procurado (quando há elementos repetidos)
+        - let lista = ["Gabriel", "Geovana", "Gessyca", "Gabriel"]
+          lista.indexOf("Gabriel")   -->   Corresponde ao índice 
+          
+    - .includes(): esse método verifica se um valor está contido ou não no array
+        - O retorno sempre será "true" ou "false"
+        - let lista = ["Gabriel", "Geovana", "Gessyca", "Gabriel"]
+          lista.includes("Gabriel")   -->   O retorno será "true"
+
+    - Se o resultado de uma pesquisa num array for igual a -1, isso significa que o valor não existe
+
+
+- Método para concatenar arrays:
+    - .concat(): esse método junta dois arrays declarados
+        - let nomes = ["Gabriel", "Geovana", "Gessyca", "Gabrieli"]
+          let numeros = [1, 2, 3, 4]
+          nomes.concat(numeros)   -->   O resultado será ["Gabriel", "Geovana", "Gessyca", "Gabrieli", 1, 2, 3, 4]
+
+
+- Ordenação de elementos do array:
+    - .sort(): realiza uma ordenação alfanumérica, por isso é importante atentar-se no uso entre strings e numbers
+        - let lista = ["Pedro", "Geovana", "Adriana", "Caio"]
+          lista.sort()   -->   lista = ["Adriana", "Caio", "Geovana", "Pedro"]
+        - let lista = [25, 2, 18, 4, 13]
+          function ordenar(a, b) {
+            return a - b
+          }
+          lista.sort(ordernar)   -->   Neste caso, a partir de dezenas, o JS trata o primeiro número e não ele como um todo, o que pode interferir na ordenação
+        - Não é uma ordenação estável, por isso, algumas vezes, será necessário criar uma função de comparação:
+            - let precos = [1, 5, 2, 3, 10]
+              let precosOrdenados = precos.sort((a, b) => a - b ou b - a)
+
+
+- Fatiamento do array: 
+    - .splice() é utilizado para "pegar" uma parte do array e possui algumas grafias:
+        - var lista = ["Amarelo", "Azul", "Branco", "Cinza", "Laranja"]
+        - lista.splice(0, 2): os parâmetros significam início e fim, vale lembrar que o último parâmetro não está incluso 
+          lista = ["Amarelo", "Azul"] 
+        - lista.splice(2): quando possuir apenas um parâmetro, o recorte terá início a partir dele até o último elemento do array
+          lista = ["Branco", "Cinza", "Laranja"]
+
+
+- Outros métodos de array:
+    - forEach() é uma função para cada elemento de um array
+        - let books = []   --> Array vazio
+          function displayBook(bookList) {   --> Função para exibir a lista de livros
+            bookList.forEach((book) => {     --> Na lista, para cada elemento livro, executa uma função
+                "Alguma função"
+          })}
+
+    - map() percorre o array e cria um novo modificado:
+        - Esse método não altera o array original
+        - Retorna um valor
+        - function applyDiscount (books) {   --> Função para aplicar desconto
+            const discount = 0.1
+            discountBooks = books.map((book) => {
+                return {
+                    ...book, preco: book.preco - (book.preco * discount)
+                }
+            })
+            return discountBooks
+        }
+
+    - filter() percorre o array e filtra o que for configurado:
+        - O retorno dos valores é boleano
+        - Esse método não altera o array original
+
+    - reduce() percorre o array e reduz para um único valor
+
+
+
+JAVA SCRIPT - OBJETOS
+---------------------
+- É uma estrutura de dados parecida com o array. Também é possível armazenar esses dados em uma variável:
+    - Diferente do array, que referenciado por índice e conteúdo, o objeto é apresentado por chave e valor
+
+    - Um objeto é declarado da seguinte forma:
+        - let pessoa = {
+            nome: "Gabriel",   -->   chave: "valor"(string) ou valor(number)
+            idade: 26
+          }
+    
+    - O objeto pode ter seus elementos acessados da seguinte forma:
+        - console.log(pessoa.nome, pessoa.idade)
+        - console.log(pessoa["nome"], pessoa["idade"])
+
+    - Uma das maneiras para adicionar ou remover um novo elemento é:
+        - Adicionar: pessoa.altura = 1.60   -->   altura só foi atribuída ao objeto a partir do momento que eu inseri um valor a ela
+        - Remover: delete pessoa.altura   -->   delete irá excluir a chave e valor que foi atribuído
+
+    - Percorrer os elementos desse objeto:
+        - É possível utilizar o "for" em objetos assim como nos arrays, porém, com uma pequena diferença:
+            - for(let chave in pessoa) {}   -->   Em alguns casos será visto a palavra "key"
+
+
+
+JAVA SCRIPT - EVENTOS
+---------------------
+- Eventos são as ações realizadas pelo:
+    - Mouse:
+        - onclick: um evento é disparado a partir do click
+        - ondblclick: um evento é disparado a partir de 2 clicks
+        - onmouseup: um evento só é disparado quando o click for despressionado
+        - onmouseover: um evento é disparado assim que o cursor sobrepor o elemento (não é necessário clicar)
+        - onmouseout: um evento é disparado assim que o cursor entrar e sair 
+        da região do elemento (não é necessário clicar)
+
+    - Teclado:
+        - onkeyup: é um evento que captura o movimento de liberar a tecla
+        - onkeydown: é um evento que captura o movimento de pressionar a tecla
+        - onkeypress: é um evento que captura a tecla pressionada
+
+    - Formulário:
+        - onfocus: é um evento acionado quando o elemento recebe o foco do cursor do mouse
+        - onblur: é um evento acionado quando o elemento perde o foco do cursor do mouse
+        - onchange: é um evento acionado quando ocorre mudança de estado
+
+    - Janela:
+        - onresize: é um evento disparado quando a página é redimensionada
+        - onscroll: é um evento disparado quando o scroll do mouse é acionado
+
+
+
+JAVA SCRIPT - FUNÇÕES
+---------------------
+- Tem como objetivo encapsular um bloco de códigos com um propósito definido:
+    - function nomeDaFuncao (parametro1, parametro2) {
+        let teste = parametro1 + parametro2
+        return teste
+      }
+
+    - function, return e void são palavras reservadas:
+        - return: funções com retorno de valores, são importantes para serem reaproveitadas em lógicas
+        - void: funções sem retorno, geralmente são apenas para execução de lógica
+
+    - O nome da função deve apresentar-se em camel case 
+
+    - Pode-se utilizar parâmetros ou não
+
+
+- Flexibilidade de parâmetros:
+    - Os parâmetros de uma função não precisam seguir a ordem de declaração
+
+    - Uma função pode ter mais de um parâmetro
+
+    - No ES2019, era possível (e ainda é) utilizar parâmetros nas chamadas das funções utilizando "arguments":
+        - Dessa forma não se faz necessário declarar os parâmetros na criação da função (há exceções)
+
+        - function soma() {
+            let resultado = 0
+            for( let i in arguments) {
+                resultado += arguments
+            }    
+            return resultado
+          }
+          console.log(soma(1, 2, 3))   -->   O valor será 6
+
+
+- Escopo de variáveis:
+    - Global: variável do script como um todo
+        - Variáveis desse nível poderão ser acessadas por escopos de bloco e função
+
+    - Função: variável específica da função
+        - Variáveis desse nível não são acessadas por escopos global e de bloco
+
+    - Bloco: variáveis de comandos como "if" e "switch"
+        - Essas variáveis são elevadas para nível global, porém, se forem declaradas dentro de uma função, será elevada para nível de função
+
+
+- Funções anônimas e técnica de wrapper:
+    - Não apresentam um nome
+
+    - Podem ser associadas a uma variável:
+        - var funcao = function (parametro) {}
+
+    - Utilizadas em callbacks:
+        - São funções utilizadas como parâmetros de outras funções a serem executadas
+        - var callbackSucesso = function (titulo, descricao) {
+            document.write(titulo)
+            document.write(descricao)
+          }
+          var callbackErro = function (erro) {
+            document.write(erro)
+          }
+        function exibir (id, callbackErro, callbackSucesso) {
+            alguma lógica...
+            if (true ou false) {
+                callbackSucesso ("Callbacks em JS", "Funções utilizadas como parâmetros")
+            }
+            else {
+                callbackErro ("Erro de exibição")
+            }
+        }
+        exibir (1, callbackSucesso, callbackErro)   --> As callbacks, quando parâmetros, não são indicadas com (),
+                                                        pois eles indicam que estão sendo executadas
+
+
+- Funções nativas para manipular strings:
+    - O mais indicado é conferir a documentação (w3schools)
+
+    - trim(), replace(), substr() e etc...
+
+
+- Funções nativas para tarefas matemáticas:
+    - O mais indicado é conferir a documentação (w3schools)
+
+    - ceil(), floor(), random(), eval() e etc
+
+
+- Funções nativas para manipular datas:
+    - O mais indicado é conferir a documentação (w3schools)
+
+    - new Date(), getDate(), getMonth() e etc
+        - get: método para recuperar dados
+        - set: método para modificar dados
+
+
+
+JAVA SCRIPT - TRATAMENTO DE ERROS
+---------------------------------
+- É um tópico abordado como programção reativa, auxiliando na não interrupção da aplicação de forma a disparar exceções para o usuário
+    - Geralmente vemos esse tema em requisições HTTP, mas também é possível utilizar fora do assunto "promises"
+
+
+- Existem os seguintes tratamentos seguindo a ideia de:
+    - Tente e finalizo | Tento, se houver erro eu trato e depois finalizo | Tento, se houver erro eu trato, indico e finalizo
+
+    - try(): significa tentar
+
+    - catch(): significa pegar
+
+    - throw(): significa lançar
+
+    - finally(): significa finalmente
+
+
+
+JAVA SCRIPT - DOM
+-----------------
+- DOM significa Document Object Model é uma interface de linguagem neutra que permite que o documento HTML seja atualizado dinamicamente
+    - Funciona como uma API que permite o acesso via JS aos elementos da página
+
+    - No geral, javascript inline não é recomendado, por isso criamos funções que manipulam o HTML e CSS (DOM), mas não significa que seja errado
+        - <button onclick="umaFuncao()">
+
+
+- É possível selecionar e manipular elementos da página através do document e seus métodos:
+    - document representa todo o documento web
+
+    - getElementById(): seleciona apenas o identificador da tag
+
+    - getElementByTagName(): seleciona o nome da tag, mas é preciso tomar cuidado para utiliza-lo
+
+    - getElementByClassName(): seleciona o nome da classe CSS
+
+    - getElementByName(): seleciona a propriedade name da tag
+
+    - className(): após definir estilos, esse método pode inserir uma classe as tags que forem selecionadas
+
+    - querySelector(), traduzindo, é um buscador de seletor:
+        - Se for uma classe: querySelector(".classe")
+        - Se for uma tag: querySelector("tag")
+        - Se for um id: querySelector("#id")
+
+    - querySelectorAll() é um seletor generalista, por isso é importante se atentar aos elementos no HTML que respeitam essa característica
+
+    - addEventListener() é uma função que adciona um evento ou monitora ele:
+        - const elemento = document.querySelector("#botao")
+            elemento.addEventListener("click", myFunction)
+
+        function myFunction() {
+            document.querySelector("#retorna").innerHTML = "Parabéns, você acertou!"
+        }
+
+    - classList() é uma função que referencia classes do CSS:
+        - Pode ser utilizado junto a add: variavel.classList.add(".classe")
+        - Pode ser utilizado junto a remove: variavel.classList.remove(".classe")
+
+
+
+JAVA SCRIPT - MANIPULANDO ELEMENTOS
+-----------------------------------
+- Propriedades e métodos para alterar elementos no HTML:
+    - element.innerHTML: esta propriedade obtém ou altera qualquer elemento no HTML, inclusive tags
+
+    - element.innerText: esta propriedade permite inserir textos no HTML
+
+    - element.attribute: esta propriedade altera o valor de um elemento HTML
+
+    - element.setAttribute(atributo, valor): este método altera o valor de um atributo de um elemento HTML
+
+
+- Adicionando e excluindo elementos:
+    - document.write(): escreve no fluxo de saída do HTML
+
+    - document.appendChild(): adiciona um elemento HTML
+
+    - document.removeChild(): remove um elemento HTML
+
+    - document.replaceChild(): substitui um elemento HTML
+
+    - document.createElement(): cria um elemento HTML
+
+
+- data-attributes são utilizados para guardar valores em elementos HTML:
+    - A primeira parte é o identificador deste dado, que consiste em data- + o nome de sua escolha que melhor identifica o tipo de dado a ser atribuído
+    
+    - A segunda parte é o valor atribuído à este data-attribute, este valor deve sempre estar entre aspas “ ”, e dessa maneira é lido como uma string:
+        - data-tipo="tinta-exterior"
+
+
+- Objetos, na linguagem JavaScript, podem ser definidos como uma coleção de dados:
+    - Para criar um objeto JavaScript, vamos utilizar as chaves { }:
+        - var livro = { 
+            titulo: "Cangaceiro JavaScript",  
+            autor: "Flávio Almeida", 
+            genero: "Front-end", 
+            editora: "Casa do código", 
+            preco: 31.92
+        }
+
+
+
+JAVA SCRIPT - BOM
+-----------------
+- Browser Object Model (BOM) é uma forma de comunicação através do JS com reursos do browser
+    - A diferença entre DOM e BOM é manipulação dos elementos de páginas HTML e recursos do browser
+
+
+- Window:
+    - É a janela onde todo conteúdo é renderizado
+
+    - É um objeto que incorpora a árvore de elementos HTML
+
+    - Possuí métodos nativos como:
+        - window.open(): é utilizado para abrir popups, recomenda-se verificar a documentação para atribuir os parâmetros corretos
+        - window.close(): é utilizado para fechar popups, porém, recomenda-se guardar o método de abertura em uma variável para facilitar o acesso
+        - window.screen: é utilizado para obter informações da tela (podem ser dimensões)
+            - .screen.width
+            - .screen.height
+            - .screen.availWidth
+            - .screen.availHeight
+        - window.location: pode ser usado para obter o endereço da página atual ou redirecionar para outra
+    
+    - Timing: 
+        - Temporização relacionado ao objeto window, mas é possível utilizar os métodos abaixo em outros cenários:
+            - setTimeout(): executa apenas uma vez uma determinada ação após uma quantidade de tempo:
+                - setTimeout(ação, tempo em milissegundos)
+            - setInterval(): sempre executa uma determinada ação após uma quantidade de tempo:
+                - setInterval(ação, tempo em milissegundos)
+
+
+
+JAVA SCRIPT - ARMAZENANDO DADOS NO NAVEGADOR
+--------------------------------------------
+- Manipular dados:
+    - Capturar dados da tela:
+        - Quando se tratar de inputs, podemos verificar os elementos através do evento, dessa forma podemos manipular os dados que compõem uma lista pelo nome e não posição no array:
+        - form.addEventListener("submit", (event) => {
+            event.preventDefault()                             --> Previne o comportamento padrão da página de enviar o formulário
+            console.log(event.target[0].value)                 --> Posso verificar o elemento através da posição da lista
+            console.log(event.target.elements["nome"].value)   --> Posso verificar o elemento buscando pelo nome do input
+        }) 
+        - target é o elemento clicado ou manuseado
+        - elements, geralmente, é o nome dado ao input
+        - appendChild(novoElemento) acrescenta ao item selecionado o elemento referenciado:
+            - item.appendChild(novoItem)
+
+    - Criar validações
+
+    - Referenciar arquivos JS no HTML:
+        - <script src="arquivo.js"></script>
+
+    - Enviar dados do input
+
+
+- Armazenar dados:
+    - Armazenamento web
+
+    - LocalStorage:
+        - Geralemente retorna um objeto
+        - É um recurso para salvar SOMENTE dados do tipo texto
+
+    - Itens e métodos do LocalStorage:
+        - localStorage.getItem() acessa uma informação salva
+        - JSON.stringfy() trandforma dados (objetos) em strings
+        - Sempre que for necessário criar um grupo de elementos que se refira ao mesmo elemento, deve-se criar um objeto
+        - Quando for necessário juntar essas informações num único lugar, deve-se utilizar um array:
+            - const itens = []                                      --> array vazio
+              const itemAtual = {                                   --> Objeto com chave e valor
+                nome: nome,
+                quantidade: quantidade
+              }
+              itens.push(itemAtual)                                 --> Inserir no array o objeto
+              localStorage.setItem("item", JSON.stringify(itens))   --> Alterar o localStorage
+
+
+- Interagir com os dados armazenados:
+    - Consultar dados do Local Storage
+
+    - Atualizar página
+
+    - Diferentes armazenadores:
+        - localStorage guarda informações de forma persistente no navegador, sendo em média 5MB de armazenamento padrão
+        - Cookies guardam informações de forma persistente no navegador, sendo até 4KB de armazenamento por Cookie
+        - sessionStorage é similar ao localStorage, sua diferença é que os dados não são salvos de forma persistente, ou seja, ao fechar o navegador eles são perdidos
+    
+    - Comparar armazenadores
+
+
+
+JAVA SCRIPT - CONSUMINDO API E TRATANDO DADOS
+---------------------------------------------
+- Síncrono ou Assíncrono:
+    - Síncrono
+
+    - Assíncrono:
+        - Async declarado na função
+        - Await declarado na resposta
+
+
+- Event loop, call stack e task queue:
+    - Event Loop é um ciclo que monitora e executa as ações que mandamos para o JavaScript
+
+    - A call stack é um mecanismo que organiza como irá funcionar o script quando existem muitas funções: qual função está sendo executada, quais estão sendo chamadas dentro de alguma função
+    
+    - Por fim, a task queue é a fila de tarefas assíncronas
+
+
+- Callbacks são assíncronos, portanto são funções que são ativadas por algum fator pré-determinado
+
+
+- Fetch API:
+    - API: Interface de Programação de Aplicações
+        - Cliente e servidor (requisita e responde)
+
+    - Requisições
+
+    - Respostas
+
+
+- Promises:
+    - Promessa de retorno de dados:
+        - Resolvida
+        - Rejeitada
+
+    - then() é usado para buscar a resposta da requisição:
+        - var consultaCep = fetch("url").then(reponse => response.json())
+            - json() é um método utilizado para transformar as respostas em objetos no formatos json
+
+    - try() é a tentativa de execução de um código antes da utlização do catch()
+
+    - catch() utilizado para tratar respostas com erros
+
+    - finally() é um método para encerrar uma requisição, sendo ela resolvida ou rejeitada
+
+    - Promise All trata várias requisições ao mesmo tempo
+
+
+
