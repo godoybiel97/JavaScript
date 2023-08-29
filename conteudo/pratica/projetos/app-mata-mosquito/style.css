@@ -1,0 +1,72 @@
+body {
+    background-image: url(../app-mata-mosquito/img/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: 1920px;
+}
+
+.mosquito1 {
+    width: 50px;
+    height: 50px;
+}
+
+.mosquito2 {
+    width: 75px;
+    height: 75px;
+}
+
+.mosquito3 {
+    width: 100px;
+    height: 100px;
+}
+
+.ladoA {
+    transform: scaleX(1);
+}
+
+.ladoB {
+    transform: scaleX(-1);
+}
+
+.painel {
+    position: absolute;
+    width: 190px;
+    padding: 10px;
+    bottom: 0px;
+    left: 0px;
+    border-top: solid 1px #FFF;
+    background-color: #FFF;
+    opacity: 0.7;
+}
+
+.vidas {
+
+}
+
+.cronometro {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.gameOver {
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gameOver button {
+    width: 200px;
+    height: 75px;
+    font-size: 25px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    background-color: #000;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.gameOver button:hover {
+    transform: scale(1.1);
+}

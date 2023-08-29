@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício Prático 7</title>
+</head>
+
+<body>
+    <input id="campo" type="text" placeholder="Digite aqui...">
+    <button id="adicionar" type="button" onclick="adicionar()">Adicionar</button>
+    <button id="ordenar" type="button" onclick="ordenar()">Ordenar</button>
+
+    <script>
+        let objetos = ["Lápis", "Borracha", "Caderno"]
+
+        function adicionar() {
+            let campoAdicionar = document.getElementById("campo").value
+        
+            if(campoAdicionar.length == 0) {
+                alert("Informe um valor válido")
+            }
+            else {
+                if(objetos.includes(campoAdicionar)) {
+                    alert("Objeto já adicionado !")
+                    document.getElementById("campo").value = ""
+                }
+                else {
+                    objetos.push(campoAdicionar)
+                    console.log(objetos)
+                    document.getElementById("campo").value = ""
+                }
+            }
+        }
+        
+        function ordenar() {
+            objetos.sort()
+            console.log(objetos)
+        }
+    </script>
+</body>
+</html>

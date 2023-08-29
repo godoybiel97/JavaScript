@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+
+<body>
+    <h3>CÁLCULO DE DIAS</h3>
+
+    <script>
+        let data = new Date()
+        document.write(`Data: ${data} <br>`)
+
+        let hora = data.getHours()
+        let minutos = data.getMinutes()
+        document.write(`Hora: ${hora}:${minutos} <br>`)
+
+        let dia = data.getDate()
+        document.write(`Dia: ${dia} <br>`)
+
+        let mes = data.getMonth()
+        document.write(`Mês: ${mes + 1} <br>`)
+
+        let ano = data.getFullYear()
+        document.write(`Ano: ${ano} <br>`)
+
+        let nascimento = new Date(1997, 1, 23)
+        document.write(`Nascimento: ${nascimento} <br>`)
+        document.write(`Nascimento: ${nascimento.getTime()} <br>`)
+
+        let dataAtual = new Date()
+        document.write(`Data atual: ${dataAtual} <br>`)
+        document.write(`Data atual: ${dataAtual.getTime()} <br>`)
+
+        let diferenca = (dataAtual.getTime() - nascimento.getTime()) / 86400000
+        document.write(`A quantidade de dias entre o nascimento e hoje é de ${diferenca} <br>`)
+
+        let idade = (Math.ceil(diferenca) / 365)
+        document.write(`A sua idade é de ${Math.ceil(idade)}`)
+
+    </script>
+</body>
+</html>

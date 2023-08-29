@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício Prático 4</title>
+</head>
+
+<body>
+    <!-- <div>
+        <h3>Faça seu cadastro</h3>
+
+        <form action="">
+            <label for="">Nome completo:</label>
+            <br>
+            <input type="text" required>
+            <br><br>
+
+            <label for="">Celular:</label>
+            <br>
+            <input type="tel" placeholder="Ex: (xx) x xxxx-xxxx" required>
+            <br><br>
+
+            <label for="">E-mail:</label>
+            <br>
+            <input type="email" placeholder="Ex: email@email.com" required>
+            <br><br>
+
+            <label for="">Senha:</label>
+            <br>
+            <input type="password" minlength="5" placeholder="Senha de 5 dígitos" required>
+            <br><br>
+
+            <label for="">Confirme sua senha:</label>
+            <br>
+            <input type="password" minlength="5" placeholder="Senha de 5 dígitos" required>
+            <br><br>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div> -->
+
+    <div>
+        <h3>Entre com sua conta</h3>
+
+        <form action="">
+            <label for="">E-mail:</label>
+            <br>
+            <input type="email" placeholder="Insira seu e-mail" required>
+            <br><br>
+
+            <label for="">Senha:</label>
+            <br>
+            <input type="password" placeholder="Insira sua senha" minlength="5" required>
+            <br><br>
+
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+
+    <script>
+        let botao = document.querySelector("button")
+
+        botao.addEventListener("click", () => {
+            let email = document.querySelector("input[type='email']")
+            let senha = document.querySelector("input[type='password']")
+
+            email = email.value
+            senha = senha.value
+
+            if (email == "gabriel@gft.com" && senha == "12345") {
+                alert("Login feito com sucesso !")
+            }
+            else {
+                alert("Usuário incorreto !")
+            }
+        })
+    </script>
+</body>
+</html>

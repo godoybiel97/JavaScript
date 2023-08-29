@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+</head>
+
+<body>
+    <h1>EXERCÍCIO DE MÉDIA</h1>
+
+    <script>
+        let nome = prompt("Insira seu nome:")
+        document.write(`Nome: ${nome} <br>`)
+
+        let materia = prompt("Insira o nome da matéria:")
+        document.write(`Matéria: ${materia} <br>`)
+
+        let nota1 = prompt("Insira a primeira nota:")
+        document.write(`Nota 1: ${nota1} <br>`)
+
+        let nota2 = prompt("Insira a segunda nota:")
+        document.write(`Nota 2: ${nota2} <br>`)
+
+        let nota3 = prompt("Insira a terceira nota:")
+        document.write(`Nota 3: ${nota3} <br>`)
+
+        let faltas = prompt("Insira suas faltas:")
+        document.write(`Quantidade de faltas: ${faltas} <br>`)
+
+        let maxFaltas = 15
+        document.write("O máximo de faltas é 15" + "<br>")
+
+        let pergunta = prompt("Você gostaria de saber sua média ? Digite SIM ou NÃO")
+        if (pergunta == "SIM") {
+            let media = ((parseInt(nota1) + parseInt(nota2) + parseInt(nota3)) / 3)
+            document.write(`A sua média é ${media.toFixed(2)} <br>`)
+
+            if (media > 5 && faltas < maxFaltas) {
+                document.write("Você foi aprovado !")
+            }
+            else {
+                document.write("Você foi reprovado pelas faltas ou pela média !")
+            }
+        }
+        else {
+            document.write("Você optou por não ver sua média !")
+        }
+    </script>
+</body>
+</html>

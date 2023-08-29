@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício Prático 2</title>
+</head>
+
+<body>
+    <h3>CÁLCULO DO IMC</h3>
+
+    <script>
+        let nome = prompt("Insira seu nome:")
+        document.write(`Olá ${nome}. Seja bem-vindo ! <br>`)
+
+        let altura = prompt("Insira sua altura em centímetros: (Ex: 1,75m = 175cm)")
+        altura = altura / 100
+        document.write(`${nome}, sua altura atual é de ${altura}m <br>`)
+
+        let peso = prompt("Insira seu peso em kg:")
+        peso = parseFloat(peso)
+        document.write(`${nome}, seu peso atual é de ${peso}kg <br>`)
+
+        let massa = peso / (altura ^ 2)
+        console.log(massa)
+
+        if (massa < 16) {
+            document.write("Baixo peso muito grave" + "<br>")
+        }
+        else if (massa > 16 && massa < 18) {
+            document.write("Baixo peso" + "<br>")
+        }
+        else if (massa > 18 && massa < 20) {
+            document.write("Peso normal" + "<br>")
+        }
+        else if (massa > 20) {
+            document.write("Sobrepeso" + "<br>")
+        }
+
+    </script>
+</body>
+</html>

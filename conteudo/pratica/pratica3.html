@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício Prático 3</title>
+</head>
+
+<body>
+    <h3>CÁLCULOS ARITMÉTICOS</h3>
+
+    <script>
+        let nome = prompt("Insira seu nome:")
+        document.write(`Olá, ${nome} ! Seja bem-vindo ! <br>`)
+
+        let numero1 = prompt(`${nome}, insira um número:`)
+        numero1 = parseInt(numero1)
+        document.write(`Você inseriu o ${numero1} <br>`)
+
+        let operacao = prompt("Qual opração você deseja realizar ? Ex: SUBTRACAO ou SOMA")
+        document.write(`${nome}, você escolheu ${operacao} <br>`)
+
+        let numero2 = prompt(`${nome}, insira um segundo número:`)
+        numero2 = parseInt(numero2)
+        document.write(`Você inseriu o ${numero2} <br>`)
+
+        function calcular (numero1, numero2, operacao) {
+            if (operacao == "SOMA") {
+                return numero1 + numero2
+            }
+            else if (operacao == "SUBTRACAO") {
+                return numero1 - numero2
+            }
+        }
+
+        document.write(calcular(numero1, numero2, operacao))
+    </script>
+</body>
+</html>

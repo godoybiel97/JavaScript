@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+
+<body>
+    <input 
+        type="text" 
+        name="caracteres" 
+        id="entrada"
+        placeholder="Insira um caracter aqui"
+        onkeyup="distribuirCaracter()"
+    >
+
+    <hr>
+
+    <label for="letras">Letras:</label>
+    <input 
+        type="text" 
+        name="letras" 
+        id="letras"
+        disabled
+    >
+
+    <label for="numeros">Números:</label>
+    <input 
+        type="text" 
+        name="numeros" 
+        id="numeros"
+        disabled
+    >
+
+    <script>
+        function distribuirCaracter() {
+            let caracter = document.getElementById("entrada").value
+
+            document.getElementById("entrada").value = ""
+
+            caracter.trim()
+
+            switch(caracter) {
+                case "0":
+                case "1":
+                case "2":
+                case "3":
+                case "4":
+                case "5":
+                case "6":
+                case "7":
+                case "8":
+                case "9":
+                    document.getElementById("numeros").value += caracter
+                break;
+
+                default:
+                document.getElementById("letras").value += caracter
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+
+<body>
+    <h3>CÁLCULO DE ÁREA</h3>
+
+    <script>
+        let orcamento = prompt("Você gostaria de fazer um orçamento ? Ex: SIM ou NÃO")
+        document.write(`Você gostaria de fazer um orçamento ? ${orcamento} <br>`)
+
+        if (orcamento == "SIM") {
+            let nome = prompt("Insira seu nome, por favor:")
+            document.write(`Olá, ${nome} ! Seja bem-vindo. Iremos realizar o seu orçamento <br>`)
+
+            let largura = prompt("Informe a largura do seu terreno em centímetros, por favor:")
+            document.write(`Largura = ${largura}cm <br>`)
+
+            let comprimento = prompt("Informe o comprimento do seu terreno em centímetros, por favor:")
+            document.write(`Comprimento = ${comprimento}cm <br>`)    
+            
+            function calcularArea (largura, comprimento) {
+                largura = largura / 100
+                comprimento = comprimento / 100
+                let area = largura * comprimento
+                return document.write(`A área do seu terreno é de ${area}m² <br>`)
+            }
+
+            calcularArea(largura, comprimento)
+        }
+        else {
+            document.write("Obrigado por entrar em contato !")
+        }
+
+    </script>
+</body>
+</html>

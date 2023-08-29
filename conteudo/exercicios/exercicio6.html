@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 6</title>
+</head>
+
+<body>
+    <style>
+        .estilo1 {
+            background-color: #FF0000;
+            color: #FFFFFF;
+            width: 150px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .estilo2 {
+            background-color: #FF00FF;
+            color: #FFFFFF;
+            width: 150px;
+            font-size: 15px;
+            text-align: center;
+        }
+    </style>
+
+    <div id="trocar" class="estilo1">Alterando estilos</div>
+
+    <hr>
+
+    <button type="button" onclick="mudarEstilo()">Alterar</button>
+
+    <script>
+        function mudarEstilo() {
+            document.getElementById("trocar").className = "estilo2"
+        }
+    </script>
+</body>
+</html>
