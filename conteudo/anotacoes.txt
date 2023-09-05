@@ -573,6 +573,7 @@ JAVA SCRIPT - BOM
                 - setTimeout(ação, tempo em milissegundos)
             - setInterval(): sempre executa uma determinada ação após uma quantidade de tempo:
                 - setInterval(ação, tempo em milissegundos)
+            - clearInterval(): interrompe e limpa o armazenamento da função setInterval()
 
 
 

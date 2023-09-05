@@ -1,3 +1,7 @@
+html {
+    cursor: url("../app-mata-mosquito/img/mata_mosca.png") 30 30, auto;
+}
+
 body {
     background-image: url(../app-mata-mosquito/img/bg.jpg);
     background-repeat: no-repeat;
@@ -47,15 +51,15 @@ body {
     font-weight: bold;
 }
 
-.gameOver {
-    margin-top: 150px;
+.gameOver, .vitoria {
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.gameOver button {
+.gameOver button, .vitoria button {
     width: 200px;
     height: 75px;
     font-size: 25px;
@@ -67,6 +71,21 @@ body {
     cursor: pointer;
 }
 
-.gameOver button:hover {
+.gameOver button:hover, .vitoria button:hover {
     transform: scale(1.1);
+}
+
+.selecao {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#nivel {
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
 }

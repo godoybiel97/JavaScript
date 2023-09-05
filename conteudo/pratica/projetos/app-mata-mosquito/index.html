@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
     <title>App Mata Mosquito</title>
 </head>
 
@@ -14,11 +15,17 @@
             <img id="v2" src="../app-mata-mosquito/img/coracao_cheio.png" alt="">
             <img id="v3" src="../app-mata-mosquito/img/coracao_cheio.png" alt="">
         </div>
+
         <div class="cronometro">
-            Tempo restante:
+            Tempo restante: <span id="cronometro"></span>
         </div>
     </div>
-</body>
 
-<script src="index.js"></script>
+    <script>
+        let criarIntervalo = setInterval(() => {
+            criarMosquito()
+        }, mosquitoTempo)
+    </script>
+    
+</body>
 </html>

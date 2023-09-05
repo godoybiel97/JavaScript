@@ -2,6 +2,32 @@
 let altura = 0
 let largura = 0
 let vidas = 1
+let tempo = 10
+let mosquitoTempo = 1500
+
+let nivel = window.location.search
+nivel = nivel.replace("?", "")
+
+if(nivel === "facil") {
+    mosquitoTempo = 1500
+}
+else if(nivel === "normal") {
+    mosquitoTempo = 1000
+}
+else if(nivel === "dificil") {
+    mosquitoTempo = 750
+}
+
+function iniciarJogo() {
+    let nivel = document.getElementById("nivel").value
+
+    if(nivel === "") {
+        alert("Selecione um  nível")
+        return false
+    }
+
+    window.location.href = "../app-mata-mosquito/index.html?" + nivel
+}
 
 function dimensao() {
     altura = window.innerHeight
@@ -13,7 +39,7 @@ function dimensao() {
 dimensao()
 
 //Definir os eixos X e Y que a imagem do "mosquito" irá percorrer dentro de um intervalo de tempo
-setInterval(() => {
+function criarMosquito() {
     let idMosquito = document.getElementById("mosquito")
     if(idMosquito) {
         idMosquito.remove()
@@ -49,7 +75,21 @@ setInterval(() => {
 
     document.body.appendChild(mosquito)
     //console.log(tamanho())
-}, 2000)
+}
+
+//Controla o tempo do jogo e renderiza na tela
+let cronometro = setInterval(() => {
+    tempo -= 1
+
+    if(tempo < 0) { //Não permite que o tempo seja negativo
+        clearInterval(cronometro)
+        clearInterval(criarIntervalo) //A função clearInterval limpa da memória os intervalos utilizados
+        window.location.href = "../app-mata-mosquito/vitoria.html"
+    }
+    else {
+        document.getElementById("cronometro").innerHTML = tempo
+    }
+}, 1000)
 
 //Definir uma classe (tamanho do mosquito) com base no número randômico
 function tamanho() {
